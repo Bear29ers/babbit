@@ -24,7 +24,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get terms" do
-    get contact_path
+    get terms_path
     assert_response :success
     assert_select "title", "Terms of Use | #{@base_title}"
   end
