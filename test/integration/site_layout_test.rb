@@ -5,11 +5,14 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     get root_path
     assert_template 'static_pages/home'
     assert_select "a[href=?]", root_path, count: 2
+    assert_select "a[href=?]", signup_path, count: 2
     assert_select "a[href=?]", about_path
     assert_select "a[href=?]", contact_path
     assert_select "a[href=?]", terms_path
     assert_select "a[href=?]", policy_path
     get about_path
-    assert_select "title", full_title("About")
+    assert_select "title", full_title("Loca!!yとは")
+    get signup_path
+    assert_select "title", full_title("新規登録")
   end
 end
