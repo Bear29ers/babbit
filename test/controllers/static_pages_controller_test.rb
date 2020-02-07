@@ -14,25 +14,25 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   test "should get about" do
     get about_path
     assert_response :success
-    assert_select "title", "About | #{@base_title}"
+    assert_select "title", "Loca!!yとは | #{@base_title}"
   end
 
   test "should get contact" do
     get contact_path
     assert_response :success
-    assert_select "title", "Contact | #{@base_title}"
+    assert_select "title", "お問い合わせ | #{@base_title}"
   end
 
   test "should get terms" do
     get terms_path
     assert_response :success
-    assert_select "title", "Terms of Use | #{@base_title}"
+    assert_select "title", "利用規約 | #{@base_title}"
   end
 
   test "should get policy" do
     get policy_path
     assert_response :success
-    assert_select "title", "Privacy Policy | #{@base_title}"
+    assert_select "title", "プライバシーポリシー | #{@base_title}"
   end
 
 end
