@@ -1,9 +1,6 @@
 //Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
-// mixins, variables, etc.
-
-
 // miscellaneous
 .debug_dump {
   font-size: 1rem;
@@ -31,7 +28,7 @@ html {
   text-align: center;
   font-size: 4.2rem;
   font-weight: bold;
-  margin-top: 3.5rem;
+  margin-top: 6rem;
 }
 
 // typography
@@ -155,5 +152,21 @@ form {
     height: 5rem;
     font-size: 2rem;
     margin-top: 4rem;
+  }
+}
+
+#error_explanation {
+  color: red;
+  font-size: 1rem;
+  ul {
+    color: red;
+    margin: 0 0 3rem 0;
+  }
+}
+
+.field_with_errors {
+  .input-field {
+    border: 2px solid #a94442;
+    color: #a94442;
   }
 }
