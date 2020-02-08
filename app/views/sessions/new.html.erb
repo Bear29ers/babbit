@@ -1,0 +1,17 @@
+<% provide(:title, "ログイン") %>
+<h1 class="page-title">ログイン</h1>
+<div class="row justify-content-center">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:session, url: login_path) do |f| %>
+      <%= f.label :email, "メールアドレス" %>
+      <%= f.email_field :email, class: "input-field" %>
+
+      <%= f.label :password, "パスワード" %>
+      <%= f.password_field :password, class: "input-field" %>
+
+      <div class="text-center">
+        <%= f.submit "ログイン", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
