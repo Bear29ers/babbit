@@ -31,6 +31,13 @@ html {
   margin-top: 6rem;
 }
 
+.alert-success {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
 // typography
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
@@ -157,7 +164,7 @@ form {
 
 #error_explanation {
   color: red;
-  font-size: 1rem;
+  font-size: 1.2rem;
   ul {
     color: red;
     margin: 0 0 3rem 0;
