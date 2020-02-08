@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get '/terms', to: 'static_pages#terms'
   get '/policy', to: 'static_pages#policy'
   get '/signup', to: 'users#new'
+  resources :users
 end
