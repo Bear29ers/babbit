@@ -6,6 +6,7 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
+      <%= link_to "ユーザープロフィールを編集する", edit_user_path(current_user) %>
     </section>
   </aside>
 </div>
