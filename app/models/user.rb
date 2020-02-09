@@ -28,4 +28,9 @@ class User < ApplicationRecord
   def authenticated?(remember_token)
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
+
+  #ユーザーのログイン情報をremember_digestから削除する（nilで上書きする）
+  def forget
+    update_attribute(:remember_digest, nil)
+  end
 end
