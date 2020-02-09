@@ -1,27 +1,9 @@
 <% provide(:title, '新規登録') %>
+<% provide(:button_text, "登録する") %>
 <h1 class="page-title">新規登録</h1>
 <div class="row justify-content-center">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user, url: signup_path) do |f| %>
-      <%= render 'shared/error_messages' %>
-
-      <%= f.label :name, "ユーザー名" %>
-      <%= f.text_field :name, class: "input-field" %>
-
-      <%= f.label :email, "メールアドレス" %>
-      <%= f.email_field :email, class: "input-field" %>
-
-      <%= f.label :password, "パスワード" %>
-      <%= f.password_field :password, class: "input-field" %>
-
-      <%= f.label :password_confirmation, "パスワード" %>
-      <%= f.label :password_confirmation, "※確認用に再度入力してください", class: "password_confirmation" %>
-      <%= f.password_field :password_confirmation, class: "input-field" %>
-
-      <div class="text-center">
-        <%= f.submit "新規登録", class: "btn btn-primary" %>
-      </div>
-    <% end %>
+    <%= render 'form' %>
     <div class="other-link text-center">
       <p>アカウントをすでにお持ちの場合はこちらから</p>
       <%= link_to "ログイン", login_path, class: "path-link" %>
