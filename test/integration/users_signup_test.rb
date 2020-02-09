@@ -14,7 +14,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     end
     assert_template 'users/new'
     assert_select 'div#error_explanation'
-    assert_select 'div.field_with_errors', count: 8
+    assert_select 'div.field_with_errors', count: 9
   end
 
   test "valid signup information" do
