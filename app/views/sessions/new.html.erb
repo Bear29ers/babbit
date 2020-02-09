@@ -9,9 +9,18 @@
       <%= f.label :password, "パスワード" %>
       <%= f.password_field :password, class: "input-field" %>
 
+      <%= f.label :remember_me, class: "checkbox" do %>
+        <%= f.check_box :remember_me, class: "align-middle" %>
+        <span class="align-middle">次回からメールアドレスまたはパスワードの入力を省略</span>
+      <% end %>
+
       <div class="text-center">
         <%= f.submit "ログイン", class: "btn btn-primary" %>
       </div>
     <% end %>
+    <div class="other-link text-center">
+      <p>アカウントをお持ちでない場合はこちらから</p>
+      <%= link_to "新規登録", signup_path, class: "path-link" %>
+    </div>
   </div>
 </div>

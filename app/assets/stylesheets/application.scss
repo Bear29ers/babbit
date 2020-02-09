@@ -146,6 +146,11 @@ label {
   font-weight: bold;
 }
 
+.password_confirmation {
+  font-size: 1.6rem;
+  font-weight: normal;
+}
+
 input {
   height: 4rem;
   padding-left: 1rem;
@@ -175,5 +180,38 @@ form {
   .input-field {
     border: 2px solid #a94442;
     color: #a94442;
+  }
+}
+
+.checkbox {
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  span {
+    font-size: 1.6rem;
+    margin-left: 1rem;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+input#session_remember_me {
+  transform: scale(1.15);
+  margin-bottom: 0;
+}
+
+.other-link {
+  margin-top: 3rem;
+  padding-top: 4rem;
+  font-size: 1.5rem;
+  border-top: solid 1px #bbb;
+  p {
+    margin-bottom: .5rem;
+  }
+  .path-link {
+    text-decoration: none;
   }
 }
