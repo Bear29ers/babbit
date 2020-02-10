@@ -1,6 +1,9 @@
 //Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
+// variables
+$border-gray: #bbb;
+
 // miscellaneous
 .debug_dump {
   font-size: 1rem;
@@ -135,7 +138,7 @@ aside {
 
 // forms
 input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
+  border: 1px solid $border-gray;
   border-radius: 1rem;
   width: 100%;
   margin-bottom: 1.5rem;
@@ -207,11 +210,22 @@ input#session_remember_me {
   margin-top: 3rem;
   padding-top: 4rem;
   font-size: 1.5rem;
-  border-top: solid 1px #bbb;
+  border-top: solid 1px $border-gray;
   p {
     margin-bottom: .5rem;
   }
   .path-link {
     text-decoration: none;
+  }
+}
+
+// users index
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 1rem 0;
+    border-bottom: 1px solid $border-gray;
   }
 }
