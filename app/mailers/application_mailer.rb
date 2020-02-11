@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
+  default from: '"Loca!!y" <noreply@example.com>', charset: 'UTF-8'
   layout 'mailer'
 end

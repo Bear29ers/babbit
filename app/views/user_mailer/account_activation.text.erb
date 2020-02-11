@@ -1,0 +1,5 @@
+こんにちは、<%= @user.name %>さん。
+アカウントを有効化するために、Loca!!yにご登録いただいたメールアドレスを確認します。
+24時間以内に下記へアクセスし、登録を完了してください。
+
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
