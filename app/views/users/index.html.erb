@@ -1,11 +1,25 @@
 <% provide(:title, 'ユーザー一覧') %>
 <h1 class="page-title">ユーザー一覧</h1>
 
-<%= will_paginate %>
+<%= will_paginate previous_label: '&laquo;', next_label: '&raquo;' %>
 
-<ul class="users">
-  <%= render @users %>
-  <%# 自動的に_user.html.erbを参照する %>
-</ul>
+<div class="users">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col"></th>
+        <th scope="col">ユーザー名</th>
+        <th scope="col">メールアドレス</th>
+        <th scope="col">最終ログイン</th>
+        <th scope="col">備考</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @users %>
+      <%# 自動的に_user.html.erbを参照する %>
+    </tbody>
+  </table>
+</div>
 
-<%= will_paginate %>
+<%= will_paginate previous_label: '&laquo;', next_label: '&raquo;' %>
