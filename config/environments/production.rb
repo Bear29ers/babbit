@@ -61,17 +61,18 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "locally_#{Rails.env}"
   config.action_mailer.perform_caching = true
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  host = 'locally-review.herokuapp.com'
-  config.action_mailer.default_url_options = {host: host}
+  host = "#{ENV['HEROKU_APPNAME']}.herokuapp.com"
+  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
   ActionMailer::Base.smtp_settings = {
-    :address => 'smtp.sendgrid.net',
-    :port => '587'
+    :address => 'smtp.gmail.com',
+    :port => '587',
     :authentication => :plain,
-    :user_name => ENV['SENDGRID_USERNAME'],
-    :password => ENV['SENDGRID_PASSWORD'],
-    :domain => 'heroku.com'
-    :enable_starttls_auto => auto
+    :user_name => ENV['GMAIL_USERNAME'],
+    :password => ENV['GMAIL_PASSWORD'],
+    :domain => 'gmail.com',
+    :enable_starttls_auto => true
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.
