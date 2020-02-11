@@ -33,6 +33,7 @@ gem 'rails-i18n'
 gem 'faker'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap4'
+gem 'mail-iso-2022-jp'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
