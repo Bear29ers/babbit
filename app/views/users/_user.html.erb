@@ -1,7 +1,12 @@
-<li>
-  <%= gravatar_for user, size: 50 %>
-  <%= link_to user.name, user %>
-  <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "このユーザーを削除", user, method: :delete, data: {confirm: "本当によろしいですか？"} %>
-  <% end %>
-</li>
+<tr>
+  <th scope="row" class="align-middle"><%= user.id %></th>
+  <td class="align-middle"><%= gravatar_for user, size: 60 %></td>
+  <td class="align-middle"><%= link_to user.name, user %></td>
+  <td class="align-middle"><%= user.email %></td>
+  <td class="align-middle">yesterday</td>
+  <td class="align-middle">
+    <% if current_user.admin? && !current_user?(user) %>
+      <%= link_to "このユーザーを削除", user, method: :delete, class: "delete-link", data: {confirm: "本当によろしいですか？"} %>
+    <% end %>
+  </td>
+</tr>
