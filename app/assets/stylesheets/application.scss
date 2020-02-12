@@ -195,8 +195,22 @@ form {
   }
 }
 
+.other-link {
+  margin-top: 3rem;
+  padding-top: 4rem;
+  font-size: 1.6rem;
+  border-top: solid 1px $border-gray;
+  p {
+    margin-bottom: .5rem;
+  }
+  .path-link {
+    text-decoration: none;
+  }
+}
+
+// login form
 .checkbox {
-  margin-top: -1rem;
+  margin-top: -.8rem;
   margin-bottom: 1rem;
   span {
     font-size: 1.6rem;
@@ -215,17 +229,9 @@ input#session_remember_me {
   margin-bottom: 0;
 }
 
-.other-link {
-  margin-top: 3rem;
-  padding-top: 4rem;
-  font-size: 1.5rem;
-  border-top: solid 1px $border-gray;
-  p {
-    margin-bottom: .5rem;
-  }
-  .path-link {
-    text-decoration: none;
-  }
+.reset-link {
+  font-size: 1.6rem;
+  float: right;
 }
 
 // users index
@@ -235,5 +241,14 @@ input#session_remember_me {
   font-size: 1.4rem;
   a.delete-link {
     font-size: 1.2rem;
+  }
+}
+
+//password reset
+.form-description {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  p {
+    font-size: 1.6rem;
   }
 }
