@@ -1,0 +1,15 @@
+test_post1:
+  content: "This is a test post 1."
+  created_at: <%= 10.minutes.ago %>
+
+test_post2:
+  content: "This is a test post 2."
+  created_at: <%= 3.years.ago %>
+
+test_post3:
+  content: "This is a test post 3"
+  created_at: <%= 2.months.ago %>
+
+most_recent:
+  content: "This is a test post 4"
+  created_at: <%= Time.zone.now %>
