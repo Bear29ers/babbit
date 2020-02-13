@@ -12,8 +12,8 @@
 
   <%= f.label :password_confirmation, "パスワード" %>
   <%= f.label :password_confirmation, "※確認用に再度入力してください", class: "password_confirmation" %>
-
   <%= f.password_field :password_confirmation, class: "input-field" %>
+  
   <div class="text-center">
     <%= f.submit yield(:button_text), class: "btn btn-primary" %>
   </div>
