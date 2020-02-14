@@ -252,3 +252,55 @@ input#session_remember_me {
     font-size: 1.6rem;
   }
 }
+
+// posts
+.post-count {
+  margin-top: 5rem;
+}
+
+.posts {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 1.5rem 0;
+    border-top: 1px solid $border-gray
+  }
+  .user {
+    margin-top: 1rem;
+    padding-top: 0;
+    font-size: 1.2rem;
+  }
+  .content {
+    display: block;
+    margin-left: 6rem;
+    font-size: 1.4rem;
+    img {
+      display: block;
+      padding: .5rem 0;
+    }
+  }
+  .timestamp {
+    color: $border-gray;
+    display: block;
+    margin-left: 7rem;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 1rem;
+    margin-top: .5rem;
+  }
+}
+
+aside {
+  textarea {
+    height: 10rem;
+    margin-bottom: .5rem;
+  }
+}
+
+span.picture {
+  margin-top: 1rem;
+  input {
+    border: 0;
+  }
+}

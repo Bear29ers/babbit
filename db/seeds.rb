@@ -21,3 +21,9 @@ User.create!(
               activated_at: Time.zone.now
               )
 end
+
+users = User.order(:created_at).take(6)
+50.times do
+  content = Faker::Lorem.paragraphs(supplemental: true)
+  users.each {|user| user.posts.create!(content: content.join(''))}
+end
