@@ -1,8 +1,8 @@
 <li id="post-<%= post.id %>">
-  <%= link_to gravatar_for(post.user, size: 50), post.user %>
+  <%= link_to gravatar_for(post.user, size: 60), post.user %>
   <span class="user"><%= link_to post.user.name, post.user %></span>
   <span class="content"><%= post.content %></span>
   <div class="timestamp">
-    Posted <%= time_ago_in_words(post.created_at) %>前
+    <%= time_ago_in_words(post.created_at) %>前に投稿
   </div>
 </li>
