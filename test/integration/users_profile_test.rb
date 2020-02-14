@@ -13,7 +13,7 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
     assert_template 'users/show'
     assert_select 'title', full_title(@user.name)
     assert_select 'h1', text: @user.name
-    assert_select 'h1>img.gravatar'
+    assert_select 'img.gravatar'
     assert_match @user.posts.count.to_s, response.body
     # assert_select 'ul.pagination'
     @user.posts.paginate(page: 1).each do |post|
