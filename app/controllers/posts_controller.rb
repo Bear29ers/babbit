@@ -5,6 +5,10 @@ class PostsController < ApplicationController
     @feed_items = current_user.feed.paginate(page: params[:page], per_page: 15)
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
+
   def new
     @user = current_user
     @post = current_user.posts.build if logged_in?

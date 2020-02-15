@@ -3,7 +3,11 @@
   <h2>地元民が自ら地元の魅力・住みやすさをおすすめできる口コミサイト</h2>
 
   <div class="top-buttons">
-    <%= link_to "新規登録", signup_path, class: "btn btn-lg btn-primary" %>
-    <%= link_to "投稿一覧", posts_path, class: "btn btn-lg btn-danger" %>
+    <% if logged_in? %>
+      <%= link_to "新規投稿", newpost_path, class: "btn btn-lg btn-success" %>
+    <% else %>
+      <%= link_to "新規登録", signup_path, class: "btn btn-lg btn-primary" %>
+    <% end %>
+      <%= link_to "投稿一覧", posts_path, class: "btn btn-lg btn-danger" %>
   </div>
 </div>

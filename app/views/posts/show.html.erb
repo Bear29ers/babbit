@@ -1,0 +1,18 @@
+<% provide(:title, truncate(@post.content, length: 7)) %>
+<div class="row justify-content-center">
+  <div class="col-md-10 post-content">
+    <%= link_to gravatar_for(@post.user, size: 90), @post.user %>
+    <h1><%= @post.user.name %></h1>
+    <span><%= link_to "ユーザープロフィールを見る", user_path(@post.user) %></span>
+    <div class="row">
+      <div class="col-md-10 content-detail">
+        <div class="content-all">
+          <%= @post.content %>
+        </div>
+        <div class="timestamp-show">
+          <%= time_ago_in_words(@post.created_at) %>前に投稿
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
