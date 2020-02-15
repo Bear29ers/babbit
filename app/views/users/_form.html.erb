@@ -7,6 +7,16 @@
   <%= f.label :email, "メールアドレス" %>
   <%= f.email_field :email, class: "input-field" %>
 
+  <%= f.label :image, "プロフィール画像" %>
+  <div class="image-upload">
+    <% if @user.image? %>
+      <%= image_tag @user.image.size80.url %>
+    <% else %>
+      <%= image_tag "/assets/default.jpg", size: '80x80' %>
+    <% end %>
+    <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: "input-field" %>
+  </div>
+
   <%= f.label :password, "パスワード" %>
   <%= f.password_field :password, class: "input-field" %>
 

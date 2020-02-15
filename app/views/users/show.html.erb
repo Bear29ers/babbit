@@ -2,7 +2,7 @@
 <div class="row">
   <aside class="col-md-4 user-aside">
     <section class="user_info">
-      <%= gravatar_for @user, size: 90 %>
+      <%= image_tag @user.image.size90.url %>
       <h1><%= @user.name %></h1>
       <span><%= link_to "ユーザープロフィールを編集する", edit_user_path(@user) %></span>
       <span>投稿数：<%= @user.posts.count %></span>

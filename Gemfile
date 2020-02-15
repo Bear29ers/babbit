@@ -28,12 +28,19 @@ gem 'jbuilder', '2.7.0'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '3.1.12'
+
 gem 'bootstrap', '~> 4.4.1'
+
 gem 'rails-i18n'
 gem 'faker'
+
 gem 'will_paginate'
 gem 'will_paginate-bootstrap4'
+
 gem 'mail-iso-2022-jp'
+
+gem 'carrierwave'
+gem 'mini_magick'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
