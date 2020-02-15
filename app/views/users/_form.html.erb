@@ -1,5 +1,5 @@
 <%= form_for(@user) do |f| %>
-  <%= render 'shared/error_messages', object: @user %>
+  <%= render 'shared/error_messages', object: f.object %>
 
   <%= f.label :name, "ユーザー名" %>
   <%= f.text_field :name, class: "input-field" %>
@@ -13,7 +13,7 @@
   <%= f.label :password_confirmation, "パスワード" %>
   <%= f.label :password_confirmation, "※確認用に再度入力してください", class: "password_confirmation" %>
   <%= f.password_field :password_confirmation, class: "input-field" %>
-  
+
   <div class="text-center">
     <%= f.submit yield(:button_text), class: "btn btn-primary" %>
   </div>

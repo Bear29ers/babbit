@@ -1,0 +1,24 @@
+<% provide(:title, truncate(@post.content, length: 7)) %>
+<div class="row justify-content-center">
+  <div class="col-md-8 post-user">
+    <%= link_to gravatar_for(@post.user, size: 90), @post.user %>
+    <h1><%= @post.user.name %></h1>
+    <span><%= link_to "ユーザープロフィールを見る", user_path(@post.user) %></span>
+    <% if current_user?(@post.user) %>
+      <div class="post-edit text-right">
+        <%= link_to "この投稿を編集", edit_post_path(@post) %>
+      </div>
+      <div class="post-delete text-right">
+        <%= link_to "この投稿を削除", @post, method: :delete, data: {confirm: "この投稿を削除してよろしいですか"}%>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-md-8 content-detail">
+    <div class="content-all">
+      <%= @post.content %>
+    </div>
+    <div class="timestamp-show">
+      <%= time_ago_in_words(@post.created_at) %>前に投稿
+    </div>
+  </div>
+</div>

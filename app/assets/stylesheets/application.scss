@@ -33,6 +33,10 @@ body {
   padding-bottom: 20rem;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 .page-title {
   text-align: center;
   font-size: 4.2rem;
@@ -83,7 +87,8 @@ header .nav-item:last-of-type {
     font-size: 2rem;
     padding: 1rem 4rem;
   }
-  .btn-primary {
+  .btn-primary,
+  .btn-success {
     margin-right: 10rem;
   }
 }
@@ -112,7 +117,7 @@ footer {
 // sidebar
 aside {
   section.user_info {
-    margin-top: 2rem;
+    margin-top: 5rem;
   }
   section {
     padding: 1rem 0;
@@ -125,6 +130,11 @@ aside {
       display: block;
       margin-bottom: .3rem;
       line-height: 1;
+      font-size: 1.3rem;
+      padding: .6rem 0;
+    }
+    span:last-of-type {
+      font-size: 1.7rem;
     }
     h1 {
       font-size: 2.4rem;
@@ -188,6 +198,10 @@ form {
   }
 }
 
+#new_post #error_explanation {
+  margin-top: 9rem;
+}
+
 .field_with_errors {
   .input-field {
     border: 2px solid #a94442;
@@ -202,9 +216,6 @@ form {
   border-top: solid 1px $border-gray;
   p {
     margin-bottom: .5rem;
-  }
-  .path-link {
-    text-decoration: none;
   }
 }
 
@@ -274,6 +285,9 @@ input#session_remember_me {
     display: block;
     margin-left: 6rem;
     font-size: 1.4rem;
+    a {
+      color: #000;
+    }
     img {
       display: block;
       padding: .5rem 0;
@@ -291,13 +305,45 @@ input#session_remember_me {
   }
 }
 
-aside {
-  textarea {
-    height: 10rem;
-    margin-bottom: .5rem;
+// post show
+.post-user {
+  margin-top: 5rem;
+  font-size: 1.3rem;
+  .post-delete,
+  .post-edit {
+    font-size: 1.1rem;
   }
 }
 
+.content-detail {
+  margin-top: 3rem;
+  padding-left: 0;
+  .content-all {
+    font-size: 1.6rem;
+  }
+  .timestamp-show {
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    color: $border-gray;
+  }
+}
+
+
+
+// new post
+.user-info-newpost {
+  margin-top: 4rem;
+}
+
+.text-area textarea {
+  height: 22rem;
+  margin-top: 5rem;
+  padding-left: 1rem;
+  font-size: 1.6rem;
+}
+
+
+//あとから
 span.picture {
   margin-top: 1rem;
   input {
