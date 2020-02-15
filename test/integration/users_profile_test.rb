@@ -8,6 +8,7 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
   end
 
   test "profile display" do
+    log_in_as(@user)
     get user_path(@user)
     assert_select 'a[href=?]', edit_user_path(@user)
     assert_template 'users/show'

@@ -6,8 +6,19 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     @user = users(:test_user1)
   end
 
+  test "should get index" do
+    get posts_path
+    assert_responce :success
+    assert_select "title", "投稿一覧 | Loca!!y"
+  end
+
   test "should redirect new when not logged in" do
     get newpost_path
+    assert_redirected_to login_url
+  end
+
+  test "should redirect show when not logged in" do
+    get post_path(@post)
     assert_redirected_to login_url
   end
 
@@ -23,5 +34,14 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
       delete post_path(@post)
     end
     assert_redirected_to login_url
+  end
+
+  test "should redirect destroy for wrong post" do
+    log_in_as(users(:test_user1))
+    post = posts(:test_post5)
+    assert_no_difference 'Post.count' do
+      delete post_path(post)
+    end
+    assert_redirected_to root_url
   end
 end

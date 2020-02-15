@@ -6,7 +6,7 @@
   <td class="align-middle">yesterday</td>
   <td class="align-middle">
     <% if current_user.admin? && !current_user?(user) %>
-      <%= link_to "このユーザーを削除", user, method: :delete, class: "delete-link", data: {confirm: "本当によろしいですか？"} %>
+      <%= link_to "このユーザーを削除", user, method: :delete, class: "delete-link", data: {confirm: "本当に削除してよろしいですか？"} %>
     <% end %>
   </td>
 </tr>

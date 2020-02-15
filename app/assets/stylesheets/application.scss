@@ -306,20 +306,25 @@ input#session_remember_me {
 }
 
 // post show
-.post-content {
+.post-user {
   margin-top: 5rem;
   font-size: 1.3rem;
-  .content-detail {
-    margin-top: 3rem;
-    padding-left: 0;
-    .content-all {
-      font-size: 1.6rem;
-    }
-    .timestamp-show {
-      margin-top: 1rem;
-      font-size: 1.3rem;
-      color: $border-gray;
-    }
+  .post-delete,
+  .post-edit {
+    font-size: 1.1rem;
+  }
+}
+
+.content-detail {
+  margin-top: 3rem;
+  padding-left: 0;
+  .content-all {
+    font-size: 1.6rem;
+  }
+  .timestamp-show {
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    color: $border-gray;
   }
 }
 
