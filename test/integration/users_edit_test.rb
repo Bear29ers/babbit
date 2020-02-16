@@ -13,7 +13,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
                                             name: "",
                                             email: "user@invalid",
                                             password: "foo",
-                                            password_confirmation: "bar"
+                                            password_confirmation: "bar",
                                             }}
     assert_template 'users/edit'
     assert_select 'div.alert'
@@ -30,7 +30,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
                                             name: name,
                                             email: email,
                                             password: "",
-                                            password_confirmation: ""
+                                            password_confirmation: "",
                                             }}
     assert_not flash.empty?
     assert_redirected_to @user

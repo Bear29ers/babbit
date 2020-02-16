@@ -15,7 +15,12 @@
   </div>
   <div class="col-md-8 content-detail">
     <div class="content-all">
-      <%= @post.content %>
+      <div class="content-text">
+        <%= @post.content %>
+      </div>
+      <div class="content-picture text-center">
+        <%= image_tag @post.picture.url if @post.picture? %>
+      </div>
     </div>
     <div class="timestamp-show">
       <%= time_ago_in_words(@post.created_at) %>前に投稿

@@ -11,6 +11,9 @@
       <div class="text-area">
         <%= f.text_area :content, placeholder: "ここにお書きください" %>
       </div>
+      <span class="picture">
+        <%= f.file_field :picture %>
+      </span>
       <div class="text-center">
         <%= f.submit "投稿する", class: "btn btn-primary" %>
       </div>
