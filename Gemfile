@@ -41,6 +41,7 @@ gem 'mail-iso-2022-jp'
 
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'initial_avatar'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
