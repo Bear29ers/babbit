@@ -12,11 +12,19 @@
         <%= f.text_area :content, placeholder: "ここにお書きください" %>
       </div>
       <span class="picture">
-        <%= f.file_field :picture %>
+        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
       </span>
       <div class="text-center">
         <%= f.submit "投稿する", class: "btn btn-primary" %>
       </div>
     <% end %>
+    <script type="text/javascript">
+      $('#post_picture').bind('change', function() {
+        const size_in_megabytes = this.files[0].size/1024/1024;
+        if (size_in_megabytes > 5) {
+          alert('画像ファイルの最大容量は5MBです 5MB以下の画像をお選びください')
+        }
+      });
+    </script>
   </div>
 </div>
