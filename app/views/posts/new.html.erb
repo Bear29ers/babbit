@@ -3,7 +3,7 @@
 <div class="row justify-content-center">
   <div class="col-md-6 col-md-offset-3">
     <section class="user-info-newpost">
-      <%= gravatar_for @user, size: 100 %>
+      <%= image_tag @user.image.size100.url %>
       <h1><%= @user.name %></h1>
     </section>
     <%= form_for(@post, url: '/newpost') do |f| %>

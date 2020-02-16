@@ -1,6 +1,8 @@
 <tr>
   <th scope="row" class="align-middle"><%= user.id %></th>
-  <td class="align-middle"><%= gravatar_for user, size: 60 %></td>
+  <td class="align-middle">
+    <%= image_tag user.image.url %>
+  </td>
   <td class="align-middle"><%= link_to user.name, user %></td>
   <td class="align-middle"><%= user.email %></td>
   <td class="align-middle">yesterday</td>

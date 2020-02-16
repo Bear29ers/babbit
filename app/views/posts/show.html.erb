@@ -1,7 +1,7 @@
 <% provide(:title, truncate(@post.content, length: 7)) %>
 <div class="row justify-content-center">
   <div class="col-md-8 post-user">
-    <%= link_to gravatar_for(@post.user, size: 90), @post.user %>
+    <%= image_tag @post.user.image.size90.url, class: "profile-img" %>
     <h1><%= @post.user.name %></h1>
     <span><%= link_to "ユーザープロフィールを見る", user_path(@post.user) %></span>
     <% if current_user?(@post.user) %>
