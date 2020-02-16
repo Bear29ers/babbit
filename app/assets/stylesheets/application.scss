@@ -51,6 +51,23 @@ a {
   padding-bottom: 1.5rem;
 }
 
+img.img-rounded {
+  border-radius: 50%;
+  border: solid 2px $border-gray;
+}
+
+img.img-size60 {
+  width: 6rem;
+}
+
+img.img-size80 {
+  width: 8rem;
+}
+
+img.img-size90 {
+  width: 9rem;
+}
+
 // typography
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
@@ -146,13 +163,14 @@ aside {
   }
 }
 
-.gravatar {
-  float: left;
-  margin-right: 1rem;
+.user_info img {
+  margin-bottom: 1.8rem;
+  width: 9rem;
 }
 
-.gravatar_edit {
-  margin-top: 1.5rem;
+.profile-img {
+  float: left;
+  margin-right: 1rem;
 }
 
 // forms
@@ -216,6 +234,24 @@ form {
   border-top: solid 1px $border-gray;
   p {
     margin-bottom: .5rem;
+  }
+}
+
+#image-upload {
+  .image-wrapper {
+    // border: solid 2px $border-gray;
+    cursor: pointer;
+    width: 8rem;
+    height: 8rem;
+    image {
+      width: 8rem;
+      height: 8rem;
+    }
+  }
+  .input-field {
+    margin-top: 1rem;
+    padding-top: .45rem;
+    cursor: pointer;
   }
 }
 
@@ -297,6 +333,7 @@ input#session_remember_me {
     color: $border-gray;
     display: block;
     margin-left: 7rem;
+    margin-top: .5rem;
   }
   .gravatar {
     float: left;

@@ -1,5 +1,5 @@
 <li id="post-<%= post.id %>">
-  <%= link_to gravatar_for(post.user, size: 60), post.user %>
+  <%= image_tag post.user.image.url, class: "img-rounded img-size60 profile-img" %>
   <span class="user"><%= link_to post.user.name, post.user %></span>
   <span class="content"><%= link_to truncate(post.content, length: 100), post  %></span>
   <div class="timestamp">

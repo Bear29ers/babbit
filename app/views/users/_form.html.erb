@@ -1,11 +1,22 @@
 <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 
+  <% if logged_in? %>
+    <%= f.label :image, "プロフィール画像" %>
+    <div id="image-upload" onClick="$('#file').click()">
+      <div class="image-wrapper justify-content-center">
+        <%= image_tag @user.image.url, class: "img-rounded img-size80" %>
+      </div>
+      <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: "input-field" %>
+    </div>
+  <% end %>
+
   <%= f.label :name, "ユーザー名" %>
   <%= f.text_field :name, class: "input-field" %>
 
   <%= f.label :email, "メールアドレス" %>
   <%= f.email_field :email, class: "input-field" %>
+
 
   <%= f.label :password, "パスワード" %>
   <%= f.password_field :password, class: "input-field" %>
