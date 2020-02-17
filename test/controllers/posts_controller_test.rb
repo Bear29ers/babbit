@@ -8,7 +8,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index" do
     get posts_path
-    assert_responce :success
+    assert_response :success
     assert_select "title", "投稿一覧 | Loca!!y"
   end
 
