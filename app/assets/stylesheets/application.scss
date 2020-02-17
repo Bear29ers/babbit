@@ -164,6 +164,11 @@ footer {
 }
 
 // contact
+.contact-text-area {
+  height: 20rem;
+  padding-left: 1rem;
+  font-size: 1.6rem;
+}
 
 // terms & policy
 .page-heading {
@@ -418,8 +423,6 @@ input#session_remember_me {
     color: $border-gray;
   }
 }
-
-
 
 // new post
 .user-info-newpost {
