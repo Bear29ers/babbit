@@ -9,7 +9,7 @@
     <%= form_for(@post, url: '/newpost') do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <div class="text-area">
-        <%= f.text_area :content, placeholder: "ここにお書きください" %>
+        <%= f.text_area :content, placeholder: "ここに投稿内容をお書きください" %>
       </div>
       <span class="picture">
         <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
