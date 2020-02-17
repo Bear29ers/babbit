@@ -1,5 +1,18 @@
 <% provide(:title, "お問い合わせ") %>
-<h1 class="page-heading">お問い合わせ</h1>
-<p>お名前</p>
-<p>メールアドレス</p>
-<p>お問い合わせ内容</p>
+<h1 class="page-title">お問い合わせ</h1>
+<%# <%= form_for do |f| %> %>
+  <%# <%= render 'shared/error_messages', object: f.object %> %>
+
+  <%# <%= f.label :name, "お名前" %> %>
+  <%# <%= f.text_field :name, class: "input-field" %> %>
+
+  <%# <%= f.label :email, "メールアドレス" %> %>
+  <%# <%= f.email_field :email, class: "input-field" %> %>
+
+  <%# <%= f.label :content, "お問い合わせ内容" %> %>
+  <%# <%= f.text_area :content, placeholder: "お問い合わせ内容とお書きください。" %> %>
+
+  <%# <div class="text-center"> %>
+    <%# <%= f.submit "投稿する", class: "btn btn-primary" %> %>
+  <%# </div> %>
+<%# <% end %> %>
