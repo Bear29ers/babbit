@@ -43,6 +43,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'initial_avatar'
 
+gem 'fog'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
