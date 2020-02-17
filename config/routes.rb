@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
   get '/about', to: 'static_pages#about'
-  get '/contact', to: 'static_pages#contact'
   get '/terms', to: 'static_pages#terms'
   get '/policy', to: 'static_pages#policy'
 
@@ -19,8 +18,11 @@ Rails.application.routes.draw do
   get '/newpost', to: 'posts#new'
   post '/newpost', to: 'posts#create'
 
+  get '/contact', to: 'contacts#new'
+
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :posts
+  resources :contacts, only: [:new, :create]
 end
