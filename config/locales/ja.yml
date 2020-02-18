@@ -9,6 +9,11 @@ ja:
         image: プロフィール画像
       post:
         content: 投稿内容
+        picture: 投稿画像
+      contact:
+        name: お名前
+        email: メールアドレス
+        content: お問い合わせ内容
 
   time:
     formats:

@@ -7,6 +7,6 @@ class Contact < ApplicationRecord
 
   #お問い合わせ内容をメールで送信する
   def send_contact_email
-    UserMailer.contact_mail(self).deliver_now
+    ContactMailer.contact_mail(self).deliver_now
   end
 end
