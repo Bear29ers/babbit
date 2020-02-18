@@ -5,6 +5,13 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
+    if @contact
+      @contact.send_contact_email
+      flash[:success] = "お問い合わせメールを送信しました"
+      redirect_to root_url
+    else
+      render 'new'
+    end
   end
 
   private
