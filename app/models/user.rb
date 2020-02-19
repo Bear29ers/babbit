@@ -1,13 +1,20 @@
 class User < ApplicationRecord
   has_many :posts, dependent: :destroy
+  # ====================自分がフォローしているユーザーとの関連 ===================================
+  #フォローする側のUserから見て、フォローされる側のUserを(中間テーブルを介して)集める。なので親はfollowing_id(フォローする側)
+  has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
+
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
   before_create :create_activation_digest
+
   validates :name, presence: true, length: {maximum: 50}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, length: {maximum: 255}, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   has_secure_password
   validates :password, presence: true, length: {minimum: 6}, allow_nil: true
+
+  #プロフィール画像のアップローダーを結びつけ
   mount_uploader :image, ImageUploader
 
   # 渡された文字列（パスワード）をbcryptでハッシュ化し、その値を返す
