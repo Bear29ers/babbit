@@ -8,6 +8,8 @@ class PostsInterfaceTest < ActionDispatch::IntegrationTest
   end
 
   test "post interface" do
+    get posts_path
+    assert_match "投稿数 (#{Post.count})", response.body
     log_in_as(@user)
     get newpost_path
     assert_select "title", "新規投稿 | Loca!!y"
@@ -45,18 +47,4 @@ class PostsInterfaceTest < ActionDispatch::IntegrationTest
     assert_select 'a', text: "この投稿を編集", count: 0
     assert_select 'a', text: "この投稿を削除", count: 0
   end
-
-  # test "post count" do
-  #   log_in_as(@user)
-  #   get posts_path
-  #   assert_match "投稿数 (#{@user.posts.count})", response.body
-  #   #まだ投稿していないユーザー
-  #   other_user = users(:test_user4)
-  #   log_in_as(other_user)
-  #   get posts_path
-  #   assert_match "投稿数 (0)", response.body
-  #   other_user.posts.create!(content: "A post")
-  #   get posts_path
-  #   assert_match "投稿数 (#{other_user.posts.count})", response.body
-  # end
 end
