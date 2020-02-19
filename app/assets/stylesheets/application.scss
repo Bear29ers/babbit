@@ -30,7 +30,7 @@ html {
 body {
   min-height: 100vh;
   position: relative;
-  padding-bottom: 20rem;
+  padding-bottom: 15rem;
 }
 
 a {
@@ -130,6 +130,39 @@ footer {
     color: rgba(255, 255, 255, .5);
   }
 }
+
+// pagination
+ul.pagination {
+  margin-top: 6rem;
+  .page-item {
+    margin-right: .3rem;
+  }
+  .page-item:last-of-type {
+    margin-right: 0;
+  }
+  .page-item:first-child .page-link,
+  .page-item:last-child .page-link {
+    border-radius: 4rem;
+  }
+  .page-link {
+    font-weight: bold;
+    color: #343a40;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    padding: 0;
+    line-height: 4rem;
+    border: none;
+    border-radius: 4rem;
+    // padding: 1rem 1.5rem;
+  }
+  .page-item:hover .page-link,
+  .page-item.active .page-link {
+    color: #fff;
+    background-color: #343a40;
+  }
+}
+
 
 // about
 .about-content {
@@ -434,13 +467,4 @@ input#session_remember_me {
   margin-top: 5rem;
   padding-left: 1rem;
   font-size: 1.6rem;
-}
-
-
-//あとから
-span.picture {
-  margin-top: 1rem;
-  input {
-    border: 0;
-  }
 }
