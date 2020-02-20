@@ -3,6 +3,9 @@ class User < ApplicationRecord
   # ====================自分がフォローしているユーザーとの関連 ===================================
   #フォローする側のUserから見て、フォローされる側のUserを(中間テーブルを介して)集める。なので親はfollowing_id(フォローする側)
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
+  # 中間テーブルを介して「followed」モデルのUser(フォローされた側)を集めることを「following」と定義
+  has_many :following, through: :active_relationships, source: :followed
+  # ========================================================================================
 
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
@@ -75,6 +78,21 @@ class User < ApplicationRecord
   #試作feedの定義
   def feed
     Post.where("user_id=?", id)
+  end
+
+  #ユーザーをフォローする
+  def follow(other_user)
+    following << other_user
+  end
+
+  #ユーザーをフォロー解除する
+  def unfollow(other_user)
+    active_relationships.find_by(followed_id: other_user.id).destroy
+  end
+
+  #現在のユーザーがフォローしてたらtrueを返す
+  def following?(other_user)
+    following.include?(other_user)
   end
 
   private
