@@ -7,6 +7,13 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed
   # ========================================================================================
 
+  # ====================自分がフォローされるユーザーとの関連 ===================================
+  #フォローされる側のUserから見て、フォローしてくる側のUserを(中間テーブルを介して)集める。なので親はfollower_id(フォローされる側)
+  has_many :passive_relationships, class_name: "Relationship", foreign_key: :followed_id, dependent: :destroy
+  # 中間テーブルを介して「follower」モデルのUser(フォローする側)を集めることを「followers」と定義
+  has_many :followers, through: :passive_relationships, source: :follower
+  # =======================================================================================
+
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
   before_create :create_activation_digest
