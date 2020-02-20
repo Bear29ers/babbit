@@ -7,6 +7,9 @@
       <span><%= link_to "ユーザープロフィールを編集する", edit_user_path(@user) %></span>
       <span>投稿数：<%= @user.posts.count %></span>
     </section>
+    <section class="stats">
+      <%= render 'shared/stats' %>
+    </section>
   </aside>
   <div class="col-md-8">
     <% if @user.posts.any? %>
