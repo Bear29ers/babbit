@@ -17,7 +17,9 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
     assert_select 'h1', text: @user.name
     assert_select 'img.img-size80'
     assert_match @user.posts.count.to_s, response.body
-    # assert_select 'ul.pagination'
+    assert_select 'ul.pagination'
     assert_match @post.content, response.body
+    assert_match @user.active_relationships.count.to_s, response.body
+    assert_match @user.passive_relationships.count.to_s, response.body
   end
 end
