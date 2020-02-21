@@ -493,3 +493,17 @@ input#session_remember_me {
   padding-left: 1rem;
   font-size: 1.6rem;
 }
+
+// follow, unfollow
+form.new_relationship,
+form.edit_relationship {
+  margin-top: 2.5rem;
+}
+
+input.follow-btn,
+input.unfollow-btn {
+  margin-top: 0;
+  font-size: 1.6rem;
+  width: 40%;
+  height: 4.5rem;
+}
