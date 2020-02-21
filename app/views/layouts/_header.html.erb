@@ -8,8 +8,8 @@
       <div class="collapse navbar-collapse justify-content-end" id="header-nav">
         <ul class="navbar-nav">
           <% if logged_in? %>
-            <li class="nav-item">
-              
+            <li class="nav-item first-item">
+              <%= link_to image_tag(@current_user.image, class: "img-rounded img-size40"), current_user %>
             </li>
             <li class="nav-item">
               <%= link_to @current_user.name, current_user, class: "nav-link" %>

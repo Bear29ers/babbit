@@ -56,6 +56,10 @@ img.img-rounded {
   border: solid 2px $border-gray;
 }
 
+img.img-size40 {
+  width: 4rem;
+}
+
 img.img-size60 {
   width: 6rem;
 }
@@ -85,6 +89,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 2rem;
 }
 
+header .first-item,
 header .nav-item:last-of-type {
   margin-right: 0;
 }
