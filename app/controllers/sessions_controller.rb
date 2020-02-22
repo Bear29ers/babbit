@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:session][:password])
       if @user.activated?
         log_in @user
+        @user.update_attribute(:login_at, Time.zone.now)
         params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
         flash[:success] = "ログインしました"
         redirect_back_or @user

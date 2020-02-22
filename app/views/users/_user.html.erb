@@ -5,7 +5,7 @@
   </td>
   <td class="align-middle"><%= link_to user.name, user %></td>
   <td class="align-middle"><%= user.email %></td>
-  <td class="align-middle">yesterday</td>
+  <td class="align-middle"><%= user.login_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
   <td class="align-middle">
     <% if current_user.admin? && !current_user?(user) %>
       <%= link_to "このユーザーを削除", user, method: :delete, class: "delete-link", data: {confirm: "本当に削除してよろしいですか？"} %>
