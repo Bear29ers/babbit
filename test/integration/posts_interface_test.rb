@@ -29,7 +29,7 @@ class PostsInterfaceTest < ActionDispatch::IntegrationTest
     assert_redirected_to posts_url
     follow_redirect!
     assert_match content, response.body
-    assert_match "投稿数 (#{@user.posts.count})", response.body
+    assert_match "投稿数 (#{@user.feed.count})", response.body
 
     #投稿を削除する
     get post_path(@post)
