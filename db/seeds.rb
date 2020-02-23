@@ -6,7 +6,8 @@ User.create!(
             password_confirmation: "foobar",
             admin: true,
             activated: true,
-            activated_at: Time.zone.now
+            activated_at: Time.zone.now,
+            login_at: Time.zone.now
             )
 
 99.times do |n|
@@ -19,7 +20,8 @@ User.create!(
               password: password,
               password_confirmation: password,
               activated: true,
-              activated_at: Time.zone.now
+              activated_at: Time.zone.now,
+              login_at: rand(1..99).hours.ago
               )
 end
 

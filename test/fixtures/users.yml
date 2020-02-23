@@ -8,6 +8,7 @@ test_user1:
   activated: true,
   activated_at: <%= Time.zone.now %>
   image: <%= file_path.join('images', 'default.jpg') %>
+  login_at: <%= Time.zone.now %>
 
 test_user2:
   name: Test User2
@@ -16,6 +17,7 @@ test_user2:
   activated: true,
   activated_at: <%= Time.zone.now %>
   image: <%= file_path.join('images', 'default.jpg') %>
+  login_at: <%= Time.zone.now %>
 
 test_user3:
   name: Test User3
@@ -24,6 +26,7 @@ test_user3:
   activated: true,
   activated_at: <%= Time.zone.now %>
   image: <%= file_path.join('images', 'default.jpg') %>
+  login_at: <%= Time.zone.now %>
 
 test_user4:
   name: Test User4
@@ -32,6 +35,7 @@ test_user4:
   activated: true,
   activated_at: <%= Time.zone.now %>
   image: <%= file_path.join('images', 'default.jpg') %>
+  login_at: <%= Time.zone.now %>
 
 <% 30.times do |n| %>
 user_<%= n %>:
@@ -40,4 +44,5 @@ user_<%= n %>:
   password_digest: <%= User.digest('password') %>
   activated: true,
   activated_at: <%= Time.zone.now %>
+  login_at: <%= Time.zone.now %>
 <% end %>
