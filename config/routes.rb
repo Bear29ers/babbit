@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   end
 
   resources :posts do
-    resource :favorites, only: [:create, :destroy]
+    resource :goods, only: [:create, :destroy]
   end
 
   resources :account_activations, only: [:edit]
