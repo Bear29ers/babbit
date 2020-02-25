@@ -484,6 +484,22 @@ input#session_remember_me {
     margin-top: 1rem;
     font-size: 1.3rem;
     color: $border-gray;
+    float: right;
+  }
+  .thumbsup {
+    margin-top: 1rem;
+    float: left;
+    font-size: 2.3rem;
+    .on-thumbs-up {
+      color: #008000
+    }
+    .on-thumbs-down {
+      color: #dc143c;
+    }
+    .off-thumbs-up,
+    .off-thumbs-down {
+      color: $border-gray;
+    }
   }
 }
 

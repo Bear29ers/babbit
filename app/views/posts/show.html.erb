@@ -25,11 +25,11 @@
     <div class="thumbsup">
       <% if @post.thumbs_up?(current_user) %>
         <%= link_to post_goods_path(@post), method: :delete do %>
-          <span class="fa fa-heart unlike-btn"></span>
+          <span class="fa fa-thumbs-up on-thumbs-up"></span>
         <% end %>
       <% else %>
         <%= link_to post_goods_path(@post), method: :post do %>
-          <span class="fa fa-heart like-btn"></span>
+          <span class="fa fa-thumbs-up off-thumbs-up"></span>
         <% end %>
       <% end %>
       <%= @post.goods.count %>
