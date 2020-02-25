@@ -422,6 +422,18 @@ input#session_remember_me {
   }
 }
 
+// thumbs buttons
+.on-thumbs-up {
+  color: #008000
+}
+.on-thumbs-down {
+  color: #dc143c;
+}
+.off-thumbs-up,
+.off-thumbs-down {
+  color: $border-gray;
+}
+
 // posts
 .post-count {
   margin-top: 5rem;
@@ -431,7 +443,7 @@ input#session_remember_me {
   list-style: none;
   padding: 0;
   li {
-    padding: 1.5rem 0;
+    padding: 1.5rem 0 3rem 0;
     border-top: 1px solid $border-gray
   }
   .user {
@@ -454,13 +466,14 @@ input#session_remember_me {
   .timestamp {
     color: $border-gray;
     display: block;
-    margin-left: 7rem;
     margin-top: .5rem;
+    float: right;
   }
-  .gravatar {
+  .thumbsup-index {
+    margin-left: 7rem;
+    margin-bottom: .5rem;
     float: left;
-    margin-right: 1rem;
-    margin-top: .5rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -486,20 +499,13 @@ input#session_remember_me {
     color: $border-gray;
     float: right;
   }
-  .thumbsup {
+  .thumbsup-show {
     margin-top: 1rem;
     float: left;
     font-size: 2.3rem;
-    .on-thumbs-up {
-      color: #008000
-    }
-    .on-thumbs-down {
-      color: #dc143c;
-    }
-    .off-thumbs-up,
-    .off-thumbs-down {
-      color: $border-gray;
-    }
+  }
+  #goods-count {
+    font-size: 2rem;
   }
 }
 

@@ -1,13 +1,17 @@
 class GoodsController < ApplicationController
+  before_action :logged_in_user
+
   def create
-    good = current_user.goods.build(post_id: params[:post_id])
+    @post = Post.find_by(id: params[:post_id])
+    good = current_user.goods.build(post_id: @post.id)
     good.save
-    redirect_to post_path(good.post_id)
+    redirect_to request.referrer || root_url
   end
 
   def destroy
-    good = Good.find_by(user_id: current_user.id, post_id: params[:post_id])
+    @post = Post.find_by(id: params[:post_id])
+    good = Good.find_by(user_id: current_user.id, post_id: @post.id)
     good.destroy
-    redirect_to post_path(good.post_id)
+    redirect_to request.referrer || root_url
   end
 end
