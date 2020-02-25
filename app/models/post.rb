@@ -8,8 +8,8 @@ class Post < ApplicationRecord
   validate :picture_size
 
   #ユーザーが投稿にいいねを既にしているかどうか
-  def favorited_by?(user)
-    favorites.where(user_id: user.id).exists?
+  def thumbs_up?(user)
+    goods.where(user_id: user.id).exists?
   end
 
   private
