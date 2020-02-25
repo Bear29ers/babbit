@@ -30,6 +30,7 @@ gem 'jbuilder', '2.7.0'
 gem 'bcrypt', '3.1.12'
 
 gem 'bootstrap', '~> 4.4.1'
+gem 'font-awesome-rails'
 
 gem 'rails-i18n'
 gem 'faker'
