@@ -8,9 +8,14 @@ class Post < ApplicationRecord
   validates :content, presence: true, length: {maximum: 500}
   validate :picture_size
 
-  #ユーザーが投稿にいいねを既にしているかどうか
+  #ユーザーが投稿にグッドをすでにしているかどうか
   def thumbs_up?(user)
     goods.where(user_id: user.id).exists?
+  end
+
+  #ユーザーが投稿にバッドをすでにしているかどうか
+  def thumbs_down?(user)
+    bads.where(user_id: user.id).exists?
   end
 
   private
