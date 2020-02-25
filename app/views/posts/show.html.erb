@@ -22,16 +22,18 @@
         <%= image_tag @post.picture.url if @post.picture? %>
       </div>
     </div>
-    <% if @post.favorited_by?(current_user) %>
-      <%= link_to post_favorites_path(@post), method: :delete do %>
-        <span class="fa fa-heart unlike-btn"></span>
+    <div class="favorite">
+      <% if @post.favorited_by?(current_user) %>
+        <%= link_to post_favorites_path(@post), method: :delete do %>
+          <span class="fa fa-heart unlike-btn"></span>
+        <% end %>
+      <% else %>
+        <%= link_to post_favorites_path(@post), method: :post do %>
+          <span class="fa fa-heart like-btn"></span>
+        <% end %>
       <% end %>
-    <% else %>
-      <%= link_to post_favorites_path(@post), method: :post do %>
-        <span class="fa fa-heart like-btn"></span>
-      <% end %>
-    <% end %>
-    <%= @post.favorites.count %>
+      <%= @post.favorites.count %>
+    </div>
     <div class="timestamp-show">
       <%= time_ago_in_words(@post.created_at) %>前に投稿
     </div>
