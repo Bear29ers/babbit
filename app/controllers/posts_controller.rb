@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :logged_in_user, only: [:new, :show, :create, :destroy]
+  before_action :logged_in_user, only: [:new, :show, :edit, :update, :create, :destroy]
   before_action :correct_user, only: :destroy
 
   def index
@@ -28,6 +28,21 @@ class PostsController < ApplicationController
       @user = current_user
       @feed_items = []
       render 'new'
+    end
+  end
+
+  def edit
+    @user = current_user
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update_attributes(post_params)
+      flash[:success] = "投稿を編集しました"
+      redirect_to @post
+    else
+      render 'edit'
     end
   end
 
