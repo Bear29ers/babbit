@@ -5,7 +5,7 @@
       <% if @feed_items.any? %>
         <%= will_paginate @feed_items, previous_label: '&laquo;', next_label: '&raquo;' %>
         <h2 class="post-count">投稿数 (<%= @feed_items.count %>)</h2>
-        <ol class="posts">
+        <ol class="posts posts-index">
           <%= render @feed_items %>
         </ol>
         <%= will_paginate @feed_items, previous_label: '&laquo;', next_label: '&raquo;' %>
@@ -14,7 +14,7 @@
       <% if @posts.any? %>
         <%= will_paginate @posts, previous_label: '&laquo;', next_label: '&raquo;' %>
         <h2 class="post-count">投稿数 (<%= @posts.count %>)</h2>
-        <ol class="posts">
+        <ol class="posts posts-index">
           <%= render @posts %>
         </ol>
         <%= will_paginate @posts, previous_label: '&laquo;', next_label: '&raquo;' %>
