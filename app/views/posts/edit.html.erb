@@ -1,13 +1,12 @@
-<% provide(:title, "新規投稿") %>
-<% provide(:url, '/newpost') %>
-<h1 class="page-title">新規投稿</h1>
+<% provide(:title, "投稿編集") %>
+<h1 class="page-title">投稿編集</h1>
 <div class="row justify-content-center">
   <div class="col-md-6 col-md-offset-3">
     <section class="user-info-newpost">
       <%= image_tag @user.image.url, class: "img-rounded img-size90 profile-img" %>
       <h1><%= @user.name %></h1>
     </section>
-    <%= form_for(@post, url: '/newpost') do |f| %>
+    <%= form_for(@post) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <div class="text-area">
         <%= f.text_area :content, placeholder: "ここに投稿内容をお書きください" %>
@@ -16,7 +15,7 @@
         <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
       </span>
       <div class="text-center">
-        <%= f.submit "投稿する", class: "btn btn-primary" %>
+        <%= f.submit "変更を保存", class: "btn btn-primary" %>
       </div>
     <% end %>
     <script type="text/javascript">

@@ -447,7 +447,7 @@ input#session_remember_me {
   list-style: none;
   padding: 0;
   li {
-    padding: 1.5rem 0 3rem 0;
+    padding: 1.5rem 0 3.8rem 0;
     border-top: 1px solid $border-gray
   }
   .user {
@@ -522,7 +522,12 @@ input#session_remember_me {
   height: 22rem;
   margin-top: 5rem;
   padding-left: 1rem;
+  padding-top: .5rem;
   font-size: 1.6rem;
+}
+
+#post_picture {
+  padding-top: .4rem;
 }
 
 // follow, unfollow
