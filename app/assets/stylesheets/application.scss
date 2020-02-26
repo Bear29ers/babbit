@@ -434,6 +434,10 @@ input#session_remember_me {
   color: $border-gray;
 }
 
+.fa-thumbs-down {
+  margin-left: 1rem;
+}
+
 // posts
 .post-count {
   margin-top: 5rem;
@@ -469,7 +473,7 @@ input#session_remember_me {
     margin-top: .5rem;
     float: right;
   }
-  .thumbsup-index {
+  .thumbs-index {
     margin-left: 7rem;
     margin-bottom: .5rem;
     float: left;
@@ -499,12 +503,12 @@ input#session_remember_me {
     color: $border-gray;
     float: right;
   }
-  .thumbsup-show {
+  .thumbs-show {
     margin-top: 1rem;
     float: left;
     font-size: 2.3rem;
   }
-  #goods-count {
+  .thumbs-count {
     font-size: 2rem;
   }
 }

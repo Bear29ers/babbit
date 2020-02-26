@@ -1,15 +1,21 @@
 class Post < ApplicationRecord
   belongs_to :user
   has_many :goods, dependent: :destroy
+  has_many :bads, dependent: :destroy
   default_scope -> {order(created_at: :desc)}
   mount_uploader :picture, PictureUploader
   validates :user_id, presence: true
   validates :content, presence: true, length: {maximum: 500}
   validate :picture_size
 
-  #ユーザーが投稿にいいねを既にしているかどうか
+  #ユーザーが投稿にグッドをすでにしているかどうか
   def thumbs_up?(user)
     goods.where(user_id: user.id).exists?
+  end
+
+  #ユーザーが投稿にバッドをすでにしているかどうか
+  def thumbs_down?(user)
+    bads.where(user_id: user.id).exists?
   end
 
   private
