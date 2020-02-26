@@ -37,6 +37,7 @@ class PostsController < ApplicationController
   end
 
   def update
+    @user = current_user
     @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
       flash[:success] = "投稿を編集しました"
