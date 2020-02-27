@@ -12,17 +12,9 @@
           <div id="thumbsup_<%= post.id %>">
             <%= render partial: 'goods/thumbsup', locals: {post: post} %>
           </div>
-
-          <% if post.thumbs_down?(current_user) %>
-            <%= link_to post_bads_path(post), method: :delete, remote: true do %>
-              <span class="fa fa-thumbs-down on-thumbs-down"></span>
-            <% end %>
-          <% else %>
-            <%= link_to post_bads_path(post), method: :post, remote: true do %>
-              <span class="fa fa-thumbs-down off-thumbs-down"></span>
-            <% end %>
-          <% end %>
-          <span id="bads-count-index"><%= post.bads.count %></span>
+          <div id="thumbsdown_<%= post.id %>">
+            <%= render partial: 'bads/thumbsdown', locals: {post: post} %>
+          </div>
         </div>
       <% end %>
       <div class="timestamp">

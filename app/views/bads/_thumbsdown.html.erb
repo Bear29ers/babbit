@@ -1,0 +1,10 @@
+<% if post.thumbs_down?(current_user) %>
+  <%= link_to post_bads_path(post), method: :delete, remote: true do %>
+    <span class="fa fa-thumbs-down on-thumbs-down"></span>
+  <% end %>
+<% else %>
+  <%= link_to post_bads_path(post), method: :post, remote: true do %>
+    <span class="fa fa-thumbs-down off-thumbs-down"></span>
+  <% end %>
+<% end %>
+<span class="thumbs-count"><%= post.bads.count %></span>

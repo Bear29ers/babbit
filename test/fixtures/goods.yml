@@ -5,3 +5,7 @@ one:
 two:
   user_id: 2
   post_id: 3
+
+three:
+  user_id: 1
+  post_id: 7
