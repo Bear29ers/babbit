@@ -5,13 +5,19 @@ class GoodsController < ApplicationController
     @post = Post.find_by(id: params[:post_id])
     good = current_user.goods.build(post_id: @post.id)
     good.save
-    redirect_to request.referrer || root_url
+    respond_to do |format|
+      format.html {redirect_to request.referrer || root_url}
+      format.js
+    end
   end
 
   def destroy
     @post = Post.find_by(id: params[:post_id])
     good = Good.find_by(user_id: current_user.id, post_id: @post.id)
     good.destroy
-    redirect_to request.referrer || root_url
+    respond_to do |format|
+      format.html {redirect_to request.referrer || root_url}
+      format.js
+    end
   end
 end

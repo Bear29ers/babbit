@@ -1,2 +1,1 @@
-$("#off-thumbs-up").html("<%= escape_javascript(render('posts/@post.id')) %>")
-$("#goods-count").html('<%= @post.goods.count %>');
+$("#thumbsup_<%= @post.id %>").html("<%= j(render partial: 'goods/thumbsup', locals: {post: @post}) %>");

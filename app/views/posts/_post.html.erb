@@ -9,7 +9,9 @@
     <div class="post-info">
       <% if logged_in? %>
         <div class="thumbs-index">
-          <%= render partial: 'goods/thumbsup', locals: {post: post} %>
+          <div id="thumbsup_<%= post.id %>">
+            <%= render partial: 'goods/thumbsup', locals: {post: post} %>
+          </div>
 
           <% if post.thumbs_down?(current_user) %>
             <%= link_to post_bads_path(post), method: :delete, remote: true do %>
