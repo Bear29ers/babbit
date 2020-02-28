@@ -438,6 +438,11 @@ input#session_remember_me {
   margin-left: 1rem;
 }
 
+.thumbs-show div,
+.thumbs-index div {
+  display: inline;
+}
+
 // posts
 .post-count {
   margin-top: 5rem;

@@ -23,27 +23,12 @@
       </div>
     </div>
     <div class="thumbs-show">
-      <% if @post.thumbs_up?(current_user) %>
-        <%= link_to post_goods_path(@post), method: :delete do %>
-          <span class="fa fa-thumbs-up on-thumbs-up"></span>
-        <% end %>
-      <% else %>
-        <%= link_to post_goods_path(@post), method: :post do %>
-          <span class="fa fa-thumbs-up off-thumbs-up"></span>
-        <% end %>
-      <% end %>
-      <span id="goods-count-show" class="thumbs-count"><%= @post.goods.count %></span>
-
-      <% if @post.thumbs_down?(current_user) %>
-        <%= link_to post_bads_path(@post), method: :delete do %>
-          <span class="fa fa-thumbs-down on-thumbs-down"></span>
-        <% end %>
-      <% else %>
-        <%= link_to post_bads_path(@post), method: :post do %>
-          <span class="fa fa-thumbs-down off-thumbs-down"></span>
-        <% end %>
-      <% end %>
-      <span id="bads-count-show" class="thumbs-count"><%= @post.bads.count %></span>
+      <div id="thumbsup_<%= @post.id %>">
+        <%= render partial: 'goods/thumbsup', locals: {post: @post} %>
+      </div>
+      <div id="thumbsdown_<%= @post.id %>">
+        <%= render partial: 'bads/thumbsdown', locals: {post: @post} %>
+      </div>
     </div>
     <div class="timestamp-show">
       <%= time_ago_in_words(@post.created_at) %>前に投稿
