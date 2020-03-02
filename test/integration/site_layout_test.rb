@@ -15,7 +15,7 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", terms_path
     assert_select "a[href=?]", policy_path
     get about_path
-    assert_select "title", full_title("Loca!!yとは")
+    assert_select "title", full_title("Babbitとは")
     get signup_path
     assert_select "title", full_title("新規登録")
   end
