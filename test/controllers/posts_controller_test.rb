@@ -10,7 +10,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get posts_path
     assert_response :success
-    assert_select "title", "投稿一覧 | Loca!!y"
+    assert_select "title", "投稿一覧 | Babbit"
   end
 
   test "should redirect new when not logged in" do

@@ -2,7 +2,6 @@ require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
   def setup
-    @base_title = "Loca!!y"
     @user = users(:test_user1)
     @other_user = users(:test_user2)
   end
@@ -10,7 +9,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
     get signup_path
     assert_response :success
-    assert_select "title", "新規登録 | #{@base_title}"
+    assert_select "title", "新規登録 | Babbit"
   end
 
   test "should redirect index when not logged in" do

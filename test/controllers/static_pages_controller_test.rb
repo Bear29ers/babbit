@@ -2,7 +2,7 @@ require 'test_helper'
 
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   def setup
-    @base_title = "Loca!!y"
+    @base_title = "Babbit"
   end
 
   test "should get home" do
@@ -14,7 +14,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   test "should get about" do
     get about_path
     assert_response :success
-    assert_select "title", "Loca!!yとは | #{@base_title}"
+    assert_select "title", "Babbitとは | #{@base_title}"
   end
 
   test "should get contact" do

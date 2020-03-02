@@ -12,7 +12,7 @@ class PostsInterfaceTest < ActionDispatch::IntegrationTest
     assert_match "投稿数 (#{Post.count})", response.body
     log_in_as(@user)
     get newpost_path
-    assert_select "title", "新規投稿 | Loca!!y"
+    assert_select "title", "新規投稿 | Babbit"
     assert_select 'input[type="file"]'
     #無効な新規投稿の場合
     assert_no_difference 'Post.count' do
@@ -40,7 +40,7 @@ class PostsInterfaceTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to posts_url
     follow_redirect!
-    assert_select "title", "投稿一覧 | Loca!!y"
+    assert_select "title", "投稿一覧 | Babbit"
 
     #違うユーザーのプロフィールにアクセス（削除リンクが表示されていない）
     get post_path(@post2)
