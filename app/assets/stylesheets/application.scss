@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:100,300,400,500,700,800,900&display=swap&subset=japanese');
 
 // variables
 $border-gray: #bbb;
@@ -28,6 +29,7 @@ html {
 }
 
 body {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   min-height: 100vh;
   position: relative;
   padding-bottom: 15rem;
@@ -98,6 +100,7 @@ header .nav-item:last-of-type {
 .top {
   margin-top: 180px;
   h1 {
+    font-weight: bold;
     font-size: 10rem;
   }
   h2 {
