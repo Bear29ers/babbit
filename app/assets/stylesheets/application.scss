@@ -58,6 +58,10 @@ img.img-rounded {
   border: solid 2px $border-gray;
 }
 
+img.img-size30 {
+  width: 3rem;
+}
+
 img.img-size40 {
   width: 4rem;
 }
@@ -533,6 +537,33 @@ input#session_remember_me {
   }
   .thumbs-count {
     font-size: 2rem;
+  }
+}
+
+.comments {
+  padding: 0;
+  margin-top: 5rem;
+  #comments-area {
+    margin-top: 3rem;
+    font-size: 1.3rem;
+    .comment-post {
+      border-bottom: 1px solid $border-gray;
+      padding-bottom: 2.5rem;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      .comment-content {
+        float: right;
+        width: 93%;
+        p {
+          margin-top: .5rem;
+          margin-bottom: 0;
+        }
+        span, a.delete-link {
+          float: right;
+          font-size: 1.1rem;
+        }
+      }
+    }
   }
 }
 

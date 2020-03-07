@@ -1,9 +1,15 @@
 <% comments.each do |comment| %>
   <% unless comment.id.nil? %>
-    <p><%= link_to comment.user.name, user_path(comment.user.id) %></p>
-    <p><%= comment.content %></p>
-    <% if comment.user == current_user %>
-      <%= link_to "削除", post_comment_path(comment.post_id, comment.id), method: :delete, remote: true %>
-    <% end %>
+    <div class="comment-post">
+      <%= image_tag comment.user.image.url, class: "img-size40 img-rounded" %>
+      <div class="comment-content">
+        <%= link_to comment.user.name, user_path(comment.user.id) %>
+        <span><%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %></span>
+        <p><%= comment.content %></p>
+        <% if comment.user == current_user %>
+          <%= link_to "削除", post_comment_path(comment.post_id, comment.id), method: :delete, remote: true, class: "delete-link" %>
+        <% end %>
+      </div>
+    </div>
   <% end %>
 <% end %>
