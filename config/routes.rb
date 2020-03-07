@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   resources :posts do
     resource :goods, only: [:create, :destroy]
     resource :bads, only: [:create, :destroy]
+    resources :comments, only: [:create, :destroy]
   end
 
   resources :account_activations, only: [:edit]
