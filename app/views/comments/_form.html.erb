@@ -1,8 +1,10 @@
+<%= image_tag current_user.image.url, class: "img-size40 img-rounded" %>
+<h4>コメントを投稿する</h4>
 <%= form_with(model: [post, comment]) do |f| %>
   <div class="comment-form">
     <%= f.text_area :content, placeholder: "コメントを入力する" %>
   </div>
-  <div class="commnet-submit">
-    <%= f.submit "コメントする", class: "btn, btn-primary" %>
+  <div class="comment-submit text-right">
+    <%= f.submit "投稿", class: "btn, btn-primary" %>
   </div>
 <% end %>
