@@ -1,0 +1,9 @@
+<% comments.each do |comment| %>
+  <% unless comment.id.nil? %>
+    <p><%= link_to comment.user.name, user_path(comment.user.id) %></p>
+    <p><%= comment.content %></p>
+    <% if comment.user == current_user %>
+      <%= link_to "削除", post_comment_path(comment.post_id, comment.id), method: :delete, remote: true %>
+    <% end %>
+  <% end %>
+<% end %>

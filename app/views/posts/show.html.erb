@@ -34,4 +34,15 @@
       <%= time_ago_in_words(@post.created_at) %>前に投稿
     </div>
   </div>
+  <div class="col-md-8">
+    <h3>コメント</h3>
+    <div id="comments-area">
+      <%# 投稿されたコメント一覧を表示するためのrender %>
+      <%= render partial: 'comments/index', locals: {comments: @comments} %>
+    </div>
+    <% if logged_in? %>
+      <%# コメント入力欄を表示するためのrender %>
+      <%= render partial: 'comments/form', locals: {comment: @comment, post: @post} %>
+    <% end %>
+  </div>
 </div>
