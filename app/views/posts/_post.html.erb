@@ -1,10 +1,8 @@
 <li id="post-<%= post.id %>">
-  <div class="post-profile-img">
-    <%= image_tag post.user.image.url, class: "img-rounded img-size60 profile-img" %>
-  </div>
+  <%= image_tag post.user.image.url, class: "img-rounded img-size60 profile-img" %>
   <div class="post-content">
     <span class="user"><%= link_to post.user.name, post.user %></span>
-    <p class="content"><%= link_to truncate(post.content, length: 100), post  %></p>
+    <%= link_to truncate(post.content, length: 100), post, class: "content-link"  %>
   </div>
     <div class="post-info">
       <% if logged_in? %>

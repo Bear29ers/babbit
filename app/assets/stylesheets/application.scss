@@ -464,17 +464,16 @@ input#session_remember_me {
   li {
     padding: 1.5rem 0 3.8rem 0;
     border-top: 1px solid $border-gray;
-    .user {
-      margin-top: 1rem;
-      padding-top: 0;
-      font-size: 1.2rem;
-    }
-    .content {
-      display: block;
-      margin-left: 6rem;
+    .post-content {
+      margin-left: 7rem;
       font-size: 1.4rem;
-      a {
+      .user {
+        margin-top: 1rem;
+        padding-top: 0;
+      }
+      .content-link {
         color: #000;
+        display: block;
       }
     }
     .timestamp,
@@ -508,6 +507,7 @@ input#session_remember_me {
     float: right;
   }
 }
+
 // post show
 .post-user {
   margin-top: 5rem;
