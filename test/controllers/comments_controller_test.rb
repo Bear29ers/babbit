@@ -10,7 +10,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
 
   test "destroy should require logged-in user" do
     assert_no_difference 'Comment.count' do
-      delete post_comments_path(comments(:test_comment2))
+      delete post_comment_path(posts(:test_post1).id, comments(:test_comment2))
     end
     assert_redirected_to login_url
   end
