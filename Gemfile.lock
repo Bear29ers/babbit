@@ -121,7 +121,7 @@ GEM
       fog-xml (~> 0.1.1)
       ipaddress (~> 0.5)
       json (~> 2.0)
-    fog-aliyun (0.3.5)
+    fog-aliyun (0.3.6)
       fog-core
       fog-json
       ipaddress (~> 0.8)
@@ -405,7 +405,9 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     retriable (3.1.2)
-    ruby-graphviz (1.2.4)
+    rexml (3.2.4)
+    ruby-graphviz (1.2.5)
+      rexml
     ruby-progressbar (1.10.1)
     ruby-vips (2.0.17)
       ffi (~> 1.9)

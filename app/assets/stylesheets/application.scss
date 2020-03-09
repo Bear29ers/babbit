@@ -105,6 +105,13 @@ header .nav-item:last-of-type {
 }
 
 // home
+body.bg {
+  background-image: image-url('bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .top {
   margin-top: 180px;
   h1 {
