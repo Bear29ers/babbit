@@ -17,7 +17,7 @@ Babbit はBear27kumaが個人開発している習慣改善のためのSNSサイ
 
 #### Target
 
-- 10代〜50代
+- 10代〜50代くらい
 - やめたい習慣がある人は誰でも
 
 ##### The reason
@@ -90,7 +90,7 @@ Babbit はBear27kumaが個人開発している習慣改善のためのSNSサイ
 
   * Back end language
     * Ruby(2.6.5)
-    * Ruby on Rails(5.1.6)
+    * Ruby on Rails(5.1.6.2)
 
 
 
