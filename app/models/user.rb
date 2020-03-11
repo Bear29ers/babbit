@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :posts, dependent: :destroy
+  has_many :habits, dependent: :destroy
   has_many :goods, dependent: :destroy
   has_many :bads, dependent: :destroy
   has_many :comments, dependent: :destroy
