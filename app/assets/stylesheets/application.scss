@@ -539,6 +539,16 @@ input#session_remember_me {
   padding-left: 0;
   .content-all {
     font-size: 1.6rem;
+    p {
+      color: $border-gray;
+      font-size: 1.3rem;
+      margin-bottom: 0;
+    }
+    .post-habit {
+      font-weight: bold;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+    }
   }
   .timestamp-show {
     margin-top: 1rem;
@@ -559,6 +569,10 @@ input#session_remember_me {
 .comments {
   padding: 0;
   margin-top: 5rem;
+  .comment-description {
+    font-size: 1.2rem;
+    color: $border-gray;
+  }
   #comments-area {
     margin: 3rem 0;
     font-size: 1.3rem;
