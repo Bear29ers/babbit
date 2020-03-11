@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200311073342) do
+ActiveRecord::Schema.define(version: 20200311073824) do
 
   create_table "bads", force: :cascade do |t|
     t.integer "user_id"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20200311073342) do
   end
 
   create_table "posts", force: :cascade do |t|
+    t.string "habit"
     t.text "content"
     t.integer "user_id"
     t.datetime "created_at", null: false

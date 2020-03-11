@@ -366,7 +366,7 @@ form {
 }
 
 .field_with_errors {
-  .input-field {
+  .input-field, #post_content {
     border: 2px solid #a94442;
     color: #a94442;
   }
@@ -484,9 +484,12 @@ input#session_remember_me {
         margin-top: 1rem;
         padding-top: 0;
       }
-      .content-link {
+      .habit-link {
+        font-size: 1.7rem;
+        font-weight: bold;
+      }
+      .habit-link, .content-link {
         color: #000;
-        display: block;
       }
     }
     .timestamp,
@@ -606,15 +609,22 @@ input#session_remember_me {
 
 // new post
 .user-info-newpost {
+  overflow: hidden;
   margin-top: 4rem;
 }
 
-.text-area textarea {
-  height: 22rem;
+.habit-form {
   margin-top: 5rem;
-  padding-left: 1rem;
-  padding-top: .5rem;
-  font-size: 1.6rem;
+}
+
+.text-area {
+  margin-top: 1rem;
+  textarea {
+    height: 22rem;
+    padding-left: 1rem;
+    padding-top: .5rem;
+    font-size: 1.6rem;
+  }
 }
 
 #post_picture {

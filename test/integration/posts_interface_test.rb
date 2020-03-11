@@ -16,14 +16,15 @@ class PostsInterfaceTest < ActionDispatch::IntegrationTest
     assert_select 'input[type="file"]'
     #無効な新規投稿の場合
     assert_no_difference 'Post.count' do
-      post posts_path, params: {post: {content: ""}}
+      post posts_path, params: {post: {content: "", habit: ""}}
     end
     assert_select 'div#error_explanation'
     #有効な新規投稿の場合
     content = "This post really ties the room together"
     picture = fixture_file_upload('test/fixtures/default.jpg', 'image/jpg')
+    habit = "This is a new bad habit"
     assert_difference 'Post.count' do
-      post posts_path, params: {post: {content: content, picture: picture}}
+      post posts_path, params: {post: {content: content, picture: picture, habit: habit}}
     end
     assert assigns(:post).picture?
     assert_redirected_to posts_url

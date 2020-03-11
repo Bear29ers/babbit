@@ -19,7 +19,8 @@ class PostsEditTest < ActionDispatch::IntegrationTest
     get edit_post_path(@post)
     assert_template 'posts/edit'
     content = "Test post edit."
-    patch post_path(@post), params: {post: {content: content, picture: ""}}
+    habit = "Bad Habit"
+    patch post_path(@post), params: {post: {content: content, habit: habit, picture: ""}}
     assert_not flash.empty?
     assert_redirected_to @post
     @post.reload

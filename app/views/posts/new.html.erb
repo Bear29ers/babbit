@@ -9,10 +9,16 @@
     </section>
     <%= form_for(@post, url: '/newpost') do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
+      <div class="habit-form">
+        <%= f.label :habit, "悪い習慣・やめたいこと" %>
+        <%= f.text_field :habit, placeholder: "あなたがこれからやめたいことを記入してください", class: "input-field" %>
+      </div>
       <div class="text-area">
-        <%= f.text_area :content, placeholder: "投稿内容を入力してください" %>
+        <%= f.label :content, "習慣に対するアクション(行動)"%>
+        <%= f.text_area :content, placeholder: "悪い習慣・やめたいことに対してあなたが起こしたアクション(行動)について入力してください。(具体的にいつ・どこで・何をした)など" %>
       </div>
       <span class="picture">
+        <%= f.label :picture, "画像(必須ではありません)" %>
         <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
       </span>
       <div class="text-center">
