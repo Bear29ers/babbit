@@ -15,7 +15,12 @@
   </div>
   <div class="col-md-8 content-detail">
     <div class="content-all">
-      <div class="content-text">
+      <p>やめたいと思っている悪い習慣</p>
+      <div class="post-habit">
+        <%= @post.habit %>
+      </div>
+      <p>起こしたアクション・行動</p>
+      <div>
         <%= @post.content %>
       </div>
       <div class="content-picture text-center">
@@ -35,7 +40,7 @@
     </div>
   </div>
   <div class="col-md-8 comments">
-    <h3><span class="fa fa-commenting-o"></span> コメント</h3>
+    <h3><span class="fa fa-commenting-o"></span> コメント <span class="comment-description">(アクション・行動に対してフィードバックやアドバイスをコメントしてみてください。)</span></h3>
     <div id="comments-area">
       <%# 投稿されたコメント一覧を表示するためのrender %>
       <%= render partial: 'comments/index', locals: {comments: @comments} %>

@@ -366,7 +366,7 @@ form {
 }
 
 .field_with_errors {
-  .input-field {
+  .input-field, #post_content {
     border: 2px solid #a94442;
     color: #a94442;
   }
@@ -484,9 +484,12 @@ input#session_remember_me {
         margin-top: 1rem;
         padding-top: 0;
       }
-      .content-link {
+      .habit-link {
+        font-size: 1.7rem;
+        font-weight: bold;
+      }
+      .habit-link, .content-link {
         color: #000;
-        display: block;
       }
     }
     .timestamp,
@@ -536,6 +539,16 @@ input#session_remember_me {
   padding-left: 0;
   .content-all {
     font-size: 1.6rem;
+    p {
+      color: $border-gray;
+      font-size: 1.3rem;
+      margin-bottom: 0;
+    }
+    .post-habit {
+      font-weight: bold;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+    }
   }
   .timestamp-show {
     margin-top: 1rem;
@@ -556,6 +569,10 @@ input#session_remember_me {
 .comments {
   padding: 0;
   margin-top: 5rem;
+  .comment-description {
+    font-size: 1.2rem;
+    color: $border-gray;
+  }
   #comments-area {
     margin: 3rem 0;
     font-size: 1.3rem;
@@ -606,15 +623,22 @@ input#session_remember_me {
 
 // new post
 .user-info-newpost {
+  overflow: hidden;
   margin-top: 4rem;
 }
 
-.text-area textarea {
-  height: 22rem;
+.habit-form {
   margin-top: 5rem;
-  padding-left: 1rem;
-  padding-top: .5rem;
-  font-size: 1.6rem;
+}
+
+.text-area {
+  margin-top: 1rem;
+  textarea {
+    height: 22rem;
+    padding-left: 1rem;
+    padding-top: .5rem;
+    font-size: 1.6rem;
+  }
 }
 
 #post_picture {

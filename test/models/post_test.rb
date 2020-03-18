@@ -3,7 +3,7 @@ require 'test_helper'
 class PostTest < ActiveSupport::TestCase
   def setup
     @user = users(:test_user1)
-    @post = @user.posts.build(content: "Lorem ipsum")
+    @post = @user.posts.build(content: "Lorem ipsum", habit: "Bad habit")
   end
 
   test "should be valid" do
@@ -20,8 +20,18 @@ class PostTest < ActiveSupport::TestCase
     assert_not @post.valid?
   end
 
-  test "content should be at most 500 characters" do
+  test "habit should be present" do
+    @post.habit = nil
+    assert_not @post.valid?
+  end
+
+  test "content should be at most 300 characters" do
     @post.content = "a" * 301
+    assert_not @post.valid?
+  end
+
+  test "habit should be at most 255 characters" do
+    @post.habit = "a" * 256
     assert_not @post.valid?
   end
 

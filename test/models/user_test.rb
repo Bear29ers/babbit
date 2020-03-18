@@ -75,7 +75,7 @@ class UserTest < ActiveSupport::TestCase
 
   test "associated posts should be destroyed" do
     @user.save
-    @user.posts.create!(content: "Lorem ipsum")
+    @user.posts.create!(content: "Lorem ipsum", habit: "Bad Habit")
     assert_difference 'Post.count', -1 do
       @user.destroy
     end

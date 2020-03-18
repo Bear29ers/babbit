@@ -1,47 +1,56 @@
 test_post1:
   content: "This is a test post 1."
+  habit: "Bad habit1"
   created_at: <%= 10.minutes.ago %>
   user: test_user1
 
 test_post2:
   content: "This is a test post 2."
+  habit: "Bad habit2"
   created_at: <%= 3.years.ago %>
   user: test_user1
 
 test_post3:
   content: "This is a test post 3"
+  habit: "Bad habit3"
   created_at: <%= 2.months.ago %>
   user: test_user1
 
 most_recent:
   content: "This is a most recent post"
+  habit: "Bad habit"
   created_at: <%= Time.zone.now %>
   user: test_user1
 
 <% 30.times do |n| %>
 post_<%= n %>:
   content: "This is a test post"
+  habit: "Bad habit"
   created_at: <%= 42.days.ago %>
   user: test_user1
 <% end %>
 
 test_post4:
   content: "This is a test post 4"
+  habit: "Bad habit4"
   created_at: <%= 2.years.ago %>
   user: test_user2
 
 test_post5:
   content: "This is a test post 5"
+  habit: "Bad habit5"
   created_at: <%= 3.days.ago %>
   user: test_user2
 
 test_post6:
   content: "This is a test post 6"
+  habit: "Bad habit6"
   created_at: <%= 10.minutes.ago %>
   user: test_user3
 
 test_post7:
   content: "This is a test post 7"
+  habit: "Bad habit7"
   created_at: <%= 4.hours.ago %>
   user: test_user3
 

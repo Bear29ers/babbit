@@ -8,6 +8,7 @@ ja:
         password_confirmation: 確認用パスワード
         image: プロフィール画像
       post:
+        habit: 悪い習慣・やめたいこと
         content: 投稿内容
         picture: 投稿画像
       contact:

@@ -59,12 +59,14 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:content, :picture)
+      params.require(:post).permit(:content, :picture, :habit)
     end
 
     def correct_user
       @post = current_user.posts.find_by(id: params[:id])
-      flash[:danger] = "別のユーザーの投稿を変更・削除できません"
-      redirect_to posts_url if @post.nil?
+      if @post.nil?
+        flash[:danger] = "別のユーザーの投稿を変更・削除できません"
+        redirect_to posts_url
+      end
     end
 end
