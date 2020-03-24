@@ -9,7 +9,7 @@
         <ul class="navbar-nav">
           <% if logged_in? %>
             <li class="nav-item first-item">
-              <%= link_to image_tag(@current_user.image, class: "img-rounded img-size40"), current_user %>
+              <%= link_to image_tag(@current_user.image.url, class: "img-rounded img-size40"), current_user %>
             </li>
             <li class="nav-item">
               <%= link_to @current_user.name, current_user, class: "nav-link" %>

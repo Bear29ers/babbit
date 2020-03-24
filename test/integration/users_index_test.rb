@@ -14,7 +14,7 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
     first_page_of_users.each do |user|
       assert_select 'a[href=?]', user_path(user), text: user.name
       assert_match user.email, response.body
-      assert_match user.login_at, response.body
+      assert_match user.login_at.strftime('%Y/%m/%d %H:%M:%S'), response.body
       unless user == @admin
         assert_select 'a[href=?]', user_path(user), text: 'このユーザーを削除'
       end
