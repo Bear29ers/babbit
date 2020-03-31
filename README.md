@@ -4,6 +4,7 @@
 
 Babbit はBear27kumaが個人開発している習慣改善のためのSNSサイトです。
 
+<img width="840" alt="Screenshot" src="https://user-images.githubusercontent.com/39920490/78002290-f52bab80-7371-11ea-849a-941b5eb10d0d.png">
 
 
 ## Description
