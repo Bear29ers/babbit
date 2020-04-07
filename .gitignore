@@ -31,5 +31,5 @@
 #仕様書・モックアップを無視する
 mockup_specification/
 
-#マスターキーを追加
+# Ignore master key for decrypting credentials and more.
 /config/master.key
