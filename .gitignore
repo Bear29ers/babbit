@@ -30,3 +30,6 @@
 
 #仕様書・モックアップを無視する
 mockup_specification/
+
+#マスターキーを追加
+/config/master.key
