@@ -66,7 +66,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  host = "ec2-18-177-116-143.ap-northeast-1.compute.amazonaws.com"
+  host = "18.177.116.143"
   config.action_mailer.default_url_options = { host: host, protocol: 'https' }
   ActionMailer::Base.smtp_settings = {
     :address => 'smtp.gmail.com',
