@@ -45,6 +45,7 @@ gem 'mini_magick'
 gem 'initial_avatar'
 
 gem 'bootsnap'
+gem 'dotenv-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -80,7 +81,7 @@ group :production do
 end
 
 group :production, :staging do
-  gem 'unicorn'
+  gem 'unicorn', '5.4.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
