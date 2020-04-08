@@ -66,14 +66,14 @@ Rails.application.configure do
   config.action_mailer.perform_caching = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  host = "#{ENV['HEROKU_APPNAME']}.herokuapp.com"
+  host = "ec2-18-177-116-143.ap-northeast-1.compute.amazonaws.com"
   config.action_mailer.default_url_options = { host: host, protocol: 'https' }
   ActionMailer::Base.smtp_settings = {
     :address => 'smtp.gmail.com',
     :port => '587',
     :authentication => :plain,
-    :user_name => ENV['GMAIL_USERNAME'],
-    :password => ENV['GMAIL_PASSWORD'],
+    :user_name => Rails.application.credentials.gmail[user_name],
+    :password => Rails.application.credentials.gmail[password],
     :domain => 'gmail.com',
     :enable_starttls_auto => true
   }
