@@ -17,7 +17,7 @@ CarrierWave.configure do |config|
     # iam_profile
     config.fog_credentials = {
       provider: 'AWS',
-      region: 'ap-northeast-1' #東京リージョン
+      region: 'ap-northeast-1', #東京リージョン
       use_iam_profile: true #IAMロールを使用する
       # credentialsで管理する場合
       # aws_access_key_id: Rails.application.credentials.aws[:access_key_id],
