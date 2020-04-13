@@ -3,7 +3,7 @@
 
   <% if logged_in? %>
     <%= f.label :image, "プロフィール画像" %>
-    <div id="image-upload" onClick="$('#file').click()">
+    <div id="image-upload">
       <div class="image-wrapper justify-content-center">
         <%= image_tag @user.image.url, class: "img-rounded img-size80" %>
       </div>

@@ -3,6 +3,8 @@ class User < ApplicationRecord
   has_many :goods, dependent: :destroy
   has_many :bads, dependent: :destroy
   has_many :comments, dependent: :destroy
+  #プロフィール画像のアップローダーを結びつけ
+  mount_uploader :image, ImageUploader
   # ====================自分がフォローしているユーザーとの関連 ===================================
   #フォローする側のUserから見て、フォローされる側のUserを(中間テーブルを介して)集める。なので親はfollowing_id(フォローする側)
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
@@ -26,9 +28,7 @@ class User < ApplicationRecord
   validates :email, presence: true, length: {maximum: 255}, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   has_secure_password
   validates :password, presence: true, length: {minimum: 6}, allow_nil: true
-
-  #プロフィール画像のアップローダーを結びつけ
-  mount_uploader :image, ImageUploader
+  validate :image_size
 
   # 渡された文字列（パスワード）をbcryptでハッシュ化し、その値を返す
   def User.digest(string)
@@ -116,5 +116,12 @@ class User < ApplicationRecord
     def create_activation_digest
       self.activation_token = User.new_token
       self.activation_digest = User.digest(activation_token)
+    end
+
+    #アップロードされた画像のサイズをバリデーションする
+    def image_size
+      if image.size > 5.megabytes
+        errors.add(:image, "画像ファイルのサイズは5MB以下にしてください")
+      end
     end
 end
